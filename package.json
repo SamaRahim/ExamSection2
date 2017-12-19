@@ -1,0 +1,39 @@
+{
+    "name": "spice",
+    "version": "1.0.0",
+    "description": "node stuff",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "testOnly": "npm run test_mocha_all",
+        "test_mocha_all": "mocha --recursive",
+        "testAndCoverageAndReport": "npm run testAndCoverage && npm run openCoverageReport",
+        "start_express_ejs_bootstrap_with_nodemon": "nodemon src/main_webServer.js",
+        "testAndCoverage": "npm run testAndCoverage_via_istanbul && npm run testAndCoverage_via_nyc",
+        "openCoverageReport": "npm run openCoverageReport_inBrowser",
+        "testAndCoverage_via_istanbul": "istanbul cover ./node_modules/mocha/bin/_mocha -- --recursive",
+        "testAndCoverage_via_nyc": "nyc mocha --recursive",
+        "openCoverageReport_inBrowser": "opn coverage/lcov-report/index.html"
+
+
+    },
+    "author": "Sama",
+    "license": "ISC",
+    "keywords": [],
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "istanbul": "^0.4.5",
+        "mocha": "^4.0.1",
+        "nodemon": "^1.12.1",
+        "nyc": "^11.3.0",
+        "sinon": "^4.1.2"
+    },
+    "dependencies": {
+        "ejs": "^2.5.7",
+        "express": "^4.16.2",
+        "nodemon": "^1.12.1"
+    },
+    "directories": {
+        "test": "test"
+    }
+}
